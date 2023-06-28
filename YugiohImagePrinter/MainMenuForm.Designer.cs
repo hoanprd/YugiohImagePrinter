@@ -36,6 +36,7 @@ namespace YugiohImagePrinter
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DownloadCardImageButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -44,8 +45,8 @@ namespace YugiohImagePrinter
             // GoButton
             // 
             this.GoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoButton.Location = new System.Drawing.Point(61, 107);
-            this.GoButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GoButton.Location = new System.Drawing.Point(61, 63);
+            this.GoButton.Margin = new System.Windows.Forms.Padding(4);
             this.GoButton.Name = "GoButton";
             this.GoButton.Size = new System.Drawing.Size(261, 79);
             this.GoButton.TabIndex = 1;
@@ -57,8 +58,8 @@ namespace YugiohImagePrinter
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitButton.ForeColor = System.Drawing.Color.Red;
-            this.ExitButton.Location = new System.Drawing.Point(61, 217);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExitButton.Location = new System.Drawing.Point(61, 267);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(261, 79);
             this.ExitButton.TabIndex = 2;
@@ -79,13 +80,14 @@ namespace YugiohImagePrinter
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lime;
+            this.panel1.Controls.Add(this.DownloadCardImageButton);
             this.panel1.Controls.Add(this.ExitButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.GoButton);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(384, 309);
+            this.panel1.Size = new System.Drawing.Size(384, 350);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -95,7 +97,7 @@ namespace YugiohImagePrinter
             this.panel2.Location = new System.Drawing.Point(403, 12);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(425, 309);
+            this.panel2.Size = new System.Drawing.Size(425, 350);
             this.panel2.TabIndex = 5;
             // 
             // pictureBox1
@@ -104,20 +106,32 @@ namespace YugiohImagePrinter
             this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(419, 303);
+            this.pictureBox1.Size = new System.Drawing.Size(419, 344);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // DownloadCardImageButton
+            // 
+            this.DownloadCardImageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DownloadCardImageButton.Location = new System.Drawing.Point(61, 164);
+            this.DownloadCardImageButton.Margin = new System.Windows.Forms.Padding(4);
+            this.DownloadCardImageButton.Name = "DownloadCardImageButton";
+            this.DownloadCardImageButton.Size = new System.Drawing.Size(261, 79);
+            this.DownloadCardImageButton.TabIndex = 4;
+            this.DownloadCardImageButton.Text = "Download card image";
+            this.DownloadCardImageButton.UseVisualStyleBackColor = true;
+            this.DownloadCardImageButton.Click += new System.EventHandler(this.DownloadCardImageButton_Click);
             // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 334);
+            this.ClientSize = new System.Drawing.Size(832, 373);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
@@ -138,5 +152,6 @@ namespace YugiohImagePrinter
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button DownloadCardImageButton;
     }
 }

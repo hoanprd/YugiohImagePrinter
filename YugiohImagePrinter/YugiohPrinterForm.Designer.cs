@@ -41,13 +41,14 @@ namespace YugiohImagePrinter
             this.AddDataPicPathButton = new System.Windows.Forms.Button();
             this.DataPicPathTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ConfirmButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExportButton
             // 
             this.ExportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExportButton.Location = new System.Drawing.Point(645, 240);
-            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(171, 79);
             this.ExportButton.TabIndex = 0;
@@ -60,7 +61,7 @@ namespace YugiohImagePrinter
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitButton.ForeColor = System.Drawing.Color.Red;
             this.ExitButton.Location = new System.Drawing.Point(21, 241);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(171, 79);
             this.ExitButton.TabIndex = 1;
@@ -94,7 +95,7 @@ namespace YugiohImagePrinter
             // 
             this.DecklistPathTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DecklistPathTextBox.Location = new System.Drawing.Point(289, 21);
-            this.DecklistPathTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DecklistPathTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DecklistPathTextBox.Name = "DecklistPathTextBox";
             this.DecklistPathTextBox.ReadOnly = true;
             this.DecklistPathTextBox.Size = new System.Drawing.Size(367, 34);
@@ -104,7 +105,7 @@ namespace YugiohImagePrinter
             // 
             this.ExportFileNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExportFileNameTextBox.Location = new System.Drawing.Point(289, 140);
-            this.ExportFileNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExportFileNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ExportFileNameTextBox.Name = "ExportFileNameTextBox";
             this.ExportFileNameTextBox.Size = new System.Drawing.Size(367, 34);
             this.ExportFileNameTextBox.TabIndex = 5;
@@ -114,7 +115,7 @@ namespace YugiohImagePrinter
             // 
             this.AddPathButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddPathButton.Location = new System.Drawing.Point(680, 21);
-            this.AddPathButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddPathButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddPathButton.Name = "AddPathButton";
             this.AddPathButton.Size = new System.Drawing.Size(136, 36);
             this.AddPathButton.TabIndex = 6;
@@ -137,7 +138,7 @@ namespace YugiohImagePrinter
             // 
             this.AddDataPicPathButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddDataPicPathButton.Location = new System.Drawing.Point(680, 80);
-            this.AddDataPicPathButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddDataPicPathButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddDataPicPathButton.Name = "AddDataPicPathButton";
             this.AddDataPicPathButton.Size = new System.Drawing.Size(136, 36);
             this.AddDataPicPathButton.TabIndex = 10;
@@ -149,7 +150,7 @@ namespace YugiohImagePrinter
             // 
             this.DataPicPathTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataPicPathTextBox.Location = new System.Drawing.Point(289, 80);
-            this.DataPicPathTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataPicPathTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DataPicPathTextBox.Name = "DataPicPathTextBox";
             this.DataPicPathTextBox.ReadOnly = true;
             this.DataPicPathTextBox.Size = new System.Drawing.Size(367, 34);
@@ -166,11 +167,24 @@ namespace YugiohImagePrinter
             this.label4.TabIndex = 8;
             this.label4.Text = "Picture data path:";
             // 
+            // ConfirmButton
+            // 
+            this.ConfirmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmButton.Location = new System.Drawing.Point(340, 240);
+            this.ConfirmButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ConfirmButton.Name = "ConfirmButton";
+            this.ConfirmButton.Size = new System.Drawing.Size(171, 79);
+            this.ConfirmButton.TabIndex = 11;
+            this.ConfirmButton.Text = "Confirm";
+            this.ConfirmButton.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
+            // 
             // YugiohPrinterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 334);
+            this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.AddDataPicPathButton);
             this.Controls.Add(this.DataPicPathTextBox);
             this.Controls.Add(this.label4);
@@ -184,7 +198,7 @@ namespace YugiohImagePrinter
             this.Controls.Add(this.ExportButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "YugiohPrinterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -208,6 +222,7 @@ namespace YugiohImagePrinter
         private System.Windows.Forms.Button AddDataPicPathButton;
         private System.Windows.Forms.TextBox DataPicPathTextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button ConfirmButton;
     }
 }
 

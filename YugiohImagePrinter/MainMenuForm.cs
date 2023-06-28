@@ -34,5 +34,11 @@ namespace YugiohImagePrinter
             MaximizeBox = false;
             ControlBox = false;
         }
+
+        private void DownloadCardImageButton_Click(object sender, EventArgs e)
+        {
+            DownloadImageForm dif = new DownloadImageForm();
+            dif.Show();
+        }
     }
 }
