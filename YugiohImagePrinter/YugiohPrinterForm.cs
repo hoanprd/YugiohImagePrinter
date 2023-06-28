@@ -23,10 +23,28 @@ namespace YugiohImagePrinter
         float horizontalValue = 180, verticalValue = 250;
         string userPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
+        private void YugiohPrinterForm_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+            ControlBox = false;
+        }
+
+        string[] tempArray;
+
+        private void AddDataPicPathButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                dataPicPath = fbd.SelectedPath;
+                DataPicPathTextBox.Text = dataPicPath;
+            }
+        }
+
         public YugiohPrinterForm()
         {
             InitializeComponent();
-            dataPicPath = "datapics";
         }
 
         private void AddPathButton_Click(object sender, EventArgs e)
@@ -47,9 +65,27 @@ namespace YugiohImagePrinter
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
+            horizontalIndex = 0;
+            verticalIndex = 0;
+            tempArray = new string[100];
+
             try
             {
                 var lines = File.ReadLines(decklistPath).Skip(1).ToArray();
+
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (lines[i] != "#main" && lines[i] != "#extra" && lines[i] != "!side" && lines[i] != "" && lines != null)
+                    {
+                        tempArray[i] = lines[i];
+                    }
+                }
+
+                List<string> list = new List<string>(tempArray);
+
+                list.RemoveAll(string.IsNullOrEmpty);
+
+                tempArray = list.ToArray();
 
                 Document document = new Document();
 
@@ -60,44 +96,42 @@ namespace YugiohImagePrinter
                     section.PageSetup.PageSize = PageSize.A4;
                 }
 
-                for (int i = 0; i < lines.Length; i++)
+                for (int i = 0; i < lines.Length - 3; i++)
                 {
-                    if (lines[i] != "#main" && lines[i] != "#extra" && lines[i] != "!side" && lines[i] != "" && lines != null)
+                    Section section = document.Sections[0];
+
+                    if ((i == 9 || i == 18 || i == 27 || i == 36 || i == 45 || i == 54 || i == 63 || i == 72 || i == 81) && i != 0)
                     {
-                        Section section = document.Sections[0];
-
-                        if (i % 9 == 0 && i != 0)
-                        {
-                            Paragraph paragraph = section.Paragraphs[0];
-                            paragraph.AppendBreak(BreakType.PageBreak);
-                            verticalIndex = 0;
-                        }
-
-                        DocPicture picture = section.Paragraphs[0].AppendPicture(Image.FromFile(dataPicPath + "\\" + lines[i] + ".jpg"));
-                        picture.HorizontalPosition = x + (horizontalValue * horizontalIndex);
-                        picture.VerticalPosition = y + (verticalValue * verticalIndex);
-
-                        horizontalIndex += 1;
-
-                        if (horizontalIndex > 2)
-                        {
-                            horizontalIndex = 0;
-                            verticalIndex += 1;
-                        }
-
-                        picture.Width = width;
-                        picture.Height = height;
-
-                        picture.TextWrappingStyle = TextWrappingStyle.InFrontOfText;
+                        Paragraph paragraph = section.Paragraphs[0];
+                        paragraph.AppendBreak(BreakType.PageBreak);
+                        verticalIndex = 0;
                     }
+
+                    DocPicture picture = section.Paragraphs[0].AppendPicture(Image.FromFile(dataPicPath + "\\" + tempArray[i] + ".jpg"));
+                    picture.HorizontalPosition = x + (horizontalValue * horizontalIndex);
+                    picture.VerticalPosition = y + (verticalValue * verticalIndex);
+
+                    horizontalIndex += 1;
+
+                    if (horizontalIndex > 2)
+                    {
+                        horizontalIndex = 0;
+                        verticalIndex += 1;
+                    }
+
+                    picture.Width = width;
+                    picture.Height = height;
+
+                    picture.TextWrappingStyle = TextWrappingStyle.InFrontOfText;
                 }
 
                 document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.Docx);
                 Console.WriteLine("Done!");
+                MessageBox.Show("Export success!\nFile location at" + userPath + "\\" + exportFileName, "Title");
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

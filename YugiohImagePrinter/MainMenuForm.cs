@@ -28,5 +28,11 @@ namespace YugiohImagePrinter
         {
             Application.Exit();
         }
+
+        private void MainMenuForm_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+            ControlBox = false;
+        }
     }
 }
