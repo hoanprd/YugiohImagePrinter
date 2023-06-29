@@ -19,7 +19,7 @@ namespace YugiohImagePrinter
 {
     public partial class YugiohPrinterForm : Form
     {
-        public static string decklistPath, dataPicPath, exportFileName;
+        public static string decklistPath, dataPicPath, exportFileName, usingData;
         public static float x = -35f, y = -50f, width = 81.9899944414f, height = 243.764172336f;
 
         int horizontalIndex = 0, verticalIndex = 0;
@@ -28,6 +28,7 @@ namespace YugiohImagePrinter
         string[] tempArray;
         int[] downArray;
         string[] imageUrl = new string[20000];
+        bool OnlineMode;
 
         HttpDownloader httpDownloader;
 
@@ -36,104 +37,145 @@ namespace YugiohImagePrinter
             MaximizeBox = false;
             ControlBox = false;
             ExportButton.Enabled = false;
+            label4.Hide();
+            DataPicPathTextBox.Hide();
+            AddDataPicPathButton.Hide();
+            exportFileName = ExportFileNameTextBox.Text + ".docx";
 
             string jsonUrl = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
 
-            if (!Directory.Exists($"{Application.StartupPath}\\{"JsonData"}"))
-            {
-                Directory.CreateDirectory($"{Application.StartupPath}\\{"JsonData"}");
+            Directory.CreateDirectory($"{Application.StartupPath}\\{"JsonData"}");
 
-                httpDownloader = new HttpDownloader(jsonUrl, $"{Application.StartupPath}\\{"JsonData"}\\{Path.GetFileName(jsonUrl) + ".json"}");
-                httpDownloader.Start();
+            httpDownloader = new HttpDownloader(jsonUrl, $"{Application.StartupPath}\\{"JsonData"}\\{Path.GetFileName(jsonUrl) + ".json"}");
+            httpDownloader.Start();
+        }
+
+        private void UsingDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            usingData = UsingDataComboBox.Text;
+            if (usingData == "Online data")
+            {
+                OnlineMode = true;
+                label4.Hide();
+                DataPicPathTextBox.Hide();
+                AddDataPicPathButton.Hide();
+            }
+            else if (usingData == "Offline data")
+            {
+                OnlineMode = false;
+                label4.Show();
+                DataPicPathTextBox.Show();
+                AddDataPicPathButton.Show();
             }
         }
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-            var lines = File.ReadLines(decklistPath).Skip(1).ToArray();
-            tempArray = new string[100];
-            downArray = new int[100];
-            int f = 0;
-
-            ConfirmButton.Enabled = false;
-            AddPathButton.Enabled = false;
-            AddDataPicPathButton.Enabled = false;
-
-            for (int i = 0; i < lines.Length; i++)
+            if (DecklistPathTextBox.Text == "" || DecklistPathTextBox.Text == null || UsingDataComboBox.Text == "" || UsingDataComboBox.Text == null)
             {
-                if (lines[i] != "#main" && lines[i] != "#extra" && lines[i] != "!side" && lines[i] != "" && lines != null)
-                {
-                    tempArray[i] = lines[i];
-                }
+                MessageBox.Show("Decklist path and using data cannot be null or empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
-
-            List<string> list = new List<string>(tempArray);
-            list.RemoveAll(string.IsNullOrEmpty);
-            tempArray = list.ToArray();
-
-            try
+            else
             {
-                if (DataPicPathTextBox.Text == "" || DataPicPathTextBox.Text == null)
+                var lines = File.ReadLines(decklistPath).Skip(1).ToArray();
+                tempArray = new string[100];
+                downArray = new int[100];
+                int f = 0;
+
+                ConfirmButton.Enabled = false;
+                AddPathButton.Enabled = false;
+                AddDataPicPathButton.Enabled = false;
+
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    imageUrl = new string[20000];
-                    int i = 0;
-
-                    using (StreamReader r = new StreamReader($"{Application.StartupPath}\\{"JsonData"}\\{"cardinfo.php.json"}"))
+                    if (lines[i] != "#main" && lines[i] != "#extra" && lines[i] != "!side" && lines[i] != "" && lines != null)
                     {
-                        string json = r.ReadToEnd();
-                        var test1 = JsonConvert.DeserializeObject<Root>(json);
-
-                        foreach (Datum ci in test1.data)
-                        {
-                            foreach (CardImage cardImage in ci.card_images)
-                            {
-                                imageUrl[i] = cardImage.image_url;
-                                i++;
-                            }
-                        }
+                        tempArray[i] = lines[i];
                     }
+                }
 
-                    List<string> list2 = new List<string>(imageUrl);
-                    list2.RemoveAll(string.IsNullOrEmpty);
-                    imageUrl = list2.ToArray();
+                List<string> list = new List<string>(tempArray);
+                list.RemoveAll(string.IsNullOrEmpty);
+                tempArray = list.ToArray();
 
-                    if (!Directory.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}"))
+                if (OnlineMode)
+                {
+                    try
                     {
-                        Directory.CreateDirectory($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}");
-                    }
+                        imageUrl = new string[20000];
+                        int i = 0;
 
-                    for (int j = 0; j < imageUrl.Length; j++)
-                    {
-                        for (int j2 = 0; j2 < tempArray.Length; j2++)
+                        using (StreamReader r = new StreamReader($"{Application.StartupPath}\\{"JsonData"}\\{"cardinfo.php.json"}"))
                         {
-                            if (Path.GetFileName(imageUrl[j]) == (tempArray[j2] + ".jpg"))
+                            string json = r.ReadToEnd();
+                            var test1 = JsonConvert.DeserializeObject<Root>(json);
+
+                            foreach (Datum ci in test1.data)
                             {
-                                if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[j])}"))
+                                foreach (CardImage cardImage in ci.card_images)
                                 {
-                                    downArray[f] = j;
-                                    f++;
+                                    imageUrl[i] = cardImage.image_url;
+                                    i++;
                                 }
                             }
                         }
+
+                        List<string> list2 = new List<string>(imageUrl);
+                        list2.RemoveAll(string.IsNullOrEmpty);
+                        imageUrl = list2.ToArray();
+
+                        if (!Directory.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}"))
+                        {
+                            Directory.CreateDirectory($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}");
+                        }
+
+                        for (int j = 0; j < imageUrl.Length; j++)
+                        {
+                            for (int j2 = 0; j2 < tempArray.Length; j2++)
+                            {
+                                if (Path.GetFileName(imageUrl[j]) == (tempArray[j2] + ".jpg"))
+                                {
+                                    if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[j])}"))
+                                    {
+                                        downArray[f] = j;
+                                        f++;
+                                    }
+                                }
+                            }
+                        }
+
+                        for (int h = 0; h < downArray.Length; h++)
+                        {
+                            if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[downArray[h]])}"))
+                            {
+                                Thread.Sleep(1300);
+                                httpDownloader = new HttpDownloader(imageUrl[downArray[h]], $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[downArray[h]])}");
+                                httpDownloader.Start();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
 
-                    for (int h = 0; h < downArray.Length; h++)
+                    ExportButton.Enabled = true;
+                }
+                else
+                {
+                    if (DataPicPathTextBox.Text == "" || DataPicPathTextBox.Text == null)
                     {
-                        if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[downArray[h]])}"))
-                        {
-                            Thread.Sleep(1300);
-                            httpDownloader = new HttpDownloader(imageUrl[downArray[h]], $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[downArray[h]])}");
-                            httpDownloader.Start();
-                        }
+                        MessageBox.Show("Picture data path cannot be null or empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        ConfirmButton.Enabled = true;
+                        AddPathButton.Enabled = true;
+                        AddDataPicPathButton.Enabled = true;
+                    }
+                    else
+                    {
+                        ExportButton.Enabled = true;
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            }
-
-            ExportButton.Enabled = true;
         }
 
         private void AddDataPicPathButton_Click(object sender, EventArgs e)
@@ -182,7 +224,7 @@ namespace YugiohImagePrinter
                 Document document = new Document();
                 document.LoadFromFile("Doc1.docx");
 
-                if (DataPicPathTextBox.Text == "" || DataPicPathTextBox.Text == null)
+                if (OnlineMode)
                 {
                     foreach (Section section in document.Sections)
                     {
