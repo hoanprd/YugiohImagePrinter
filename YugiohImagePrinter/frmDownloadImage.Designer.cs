@@ -45,10 +45,9 @@ namespace YugiohImagePrinter
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(119, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(89, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(546, 60);
+            this.label1.Size = new System.Drawing.Size(474, 51);
             this.label1.TabIndex = 2;
             this.label1.Text = "Warning: If you press the \"Download\" button that will download\r\nall the card imag" +
     "e from the url connect to ygoprodeck database.\r\nIt will take almost an hour to d" +
@@ -62,10 +61,9 @@ namespace YugiohImagePrinter
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(119, 98);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(89, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(563, 60);
+            this.label2.Size = new System.Drawing.Size(460, 48);
             this.label2.TabIndex = 8;
             this.label2.Text = "Any trouble in the downloading process just press the \"Download\"\r\nuntil you get f" +
     "ull of the card database base on ygoprodeck.com\r\nOr you can get the driver link " +
@@ -76,10 +74,11 @@ namespace YugiohImagePrinter
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(16, 180);
+            this.textBox1.Location = new System.Drawing.Point(12, 146);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(800, 30);
+            this.textBox1.Size = new System.Drawing.Size(601, 26);
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "https://drive.google.com/drive/folders/1JXLhv2MFxmCRdCBqebnmnvB8Zw5MFl7Z?usp=shar" +
     "ing";
@@ -89,10 +88,9 @@ namespace YugiohImagePrinter
             this.UseDriverLinkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.UseDriverLinkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UseDriverLinkButton.ForeColor = System.Drawing.Color.Navy;
-            this.UseDriverLinkButton.Location = new System.Drawing.Point(335, 239);
-            this.UseDriverLinkButton.Margin = new System.Windows.Forms.Padding(4);
+            this.UseDriverLinkButton.Location = new System.Drawing.Point(251, 194);
             this.UseDriverLinkButton.Name = "UseDriverLinkButton";
-            this.UseDriverLinkButton.Size = new System.Drawing.Size(171, 39);
+            this.UseDriverLinkButton.Size = new System.Drawing.Size(128, 32);
             this.UseDriverLinkButton.TabIndex = 10;
             this.UseDriverLinkButton.Text = "Use driver link";
             this.UseDriverLinkButton.UseVisualStyleBackColor = true;
@@ -105,10 +103,9 @@ namespace YugiohImagePrinter
             this.AgreeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgreeButton.Image = global::YugiohImagePrinter.Properties.Resources.Iconshock_Cms_User_login;
             this.AgreeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgreeButton.Location = new System.Drawing.Point(335, 330);
-            this.AgreeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AgreeButton.Location = new System.Drawing.Point(251, 268);
             this.AgreeButton.Name = "AgreeButton";
-            this.AgreeButton.Size = new System.Drawing.Size(170, 71);
+            this.AgreeButton.Size = new System.Drawing.Size(128, 58);
             this.AgreeButton.TabIndex = 7;
             this.AgreeButton.Text = "Tôi đồng ý";
             this.AgreeButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,10 +119,9 @@ namespace YugiohImagePrinter
             this.DownloadCardImageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DownloadCardImageButton.Image = global::YugiohImagePrinter.Properties.Resources.SAVEADD;
             this.DownloadCardImageButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DownloadCardImageButton.Location = new System.Drawing.Point(645, 330);
-            this.DownloadCardImageButton.Margin = new System.Windows.Forms.Padding(4);
+            this.DownloadCardImageButton.Location = new System.Drawing.Point(484, 268);
             this.DownloadCardImageButton.Name = "DownloadCardImageButton";
-            this.DownloadCardImageButton.Size = new System.Drawing.Size(171, 71);
+            this.DownloadCardImageButton.Size = new System.Drawing.Size(128, 58);
             this.DownloadCardImageButton.TabIndex = 1;
             this.DownloadCardImageButton.Text = "Tải ảnh";
             this.DownloadCardImageButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -134,10 +130,10 @@ namespace YugiohImagePrinter
             // 
             // frmDownloadImage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(832, 414);
+            this.ClientSize = new System.Drawing.Size(624, 336);
             this.Controls.Add(this.UseDriverLinkButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -145,7 +141,6 @@ namespace YugiohImagePrinter
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DownloadCardImageButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDownloadImage";
             this.Text = "Tải ảnh";
             this.Load += new System.EventHandler(this.DownloadImageForm_Load);

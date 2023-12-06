@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,11 +15,15 @@ using Newtonsoft.Json;
 using Spire.Doc;
 using Spire.Doc.Documents;
 using Spire.Doc.Fields;
+using AltoHttp.NativeMessages;
 
 namespace YugiohImagePrinter
 {
     public partial class frmYugiohPrinter : Form
     {
+        private string onlinePath, offlinePath, fileFormat, pageSize;
+        private string duongdanDoc, settingPath1, settingPath2, settingPath3, settingPath4;
+
         public static string decklistPath, dataPicPath, exportFileName, usingData;
         public static float x = -35f, y = -50f, width = 81.9899944414f, height = 243.764172336f;
 
@@ -37,10 +42,32 @@ namespace YugiohImagePrinter
             MaximizeBox = false;
             ControlBox = false;
             ExportButton.Enabled = false;
-            label4.Hide();
-            DataPicPathTextBox.Hide();
-            AddDataPicPathButton.Hide();
-            exportFileName = ExportFileNameTextBox.Text + ".docx";
+
+            //exportFileName = ExportFileNameTextBox.Text + ".docx";
+            duongdanDoc = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            settingPath1 = duongdanDoc + @"\YugiohPrinterSetting\SettingValue1.txt";
+            settingPath2 = duongdanDoc + @"\YugiohPrinterSetting\SettingValue2.txt";
+            settingPath3 = duongdanDoc + @"\YugiohPrinterSetting\SettingValue3.txt";
+            settingPath4 = duongdanDoc + @"\YugiohPrinterSetting\SettingValue4.txt";
+
+            string readFile1 = File.ReadAllText(settingPath1);
+            string readFile2 = File.ReadAllText(settingPath2);
+            string readFile3 = File.ReadAllText(settingPath3);
+            string readFile4 = File.ReadAllText(settingPath4);
+
+            onlinePath = readFile1;
+            offlinePath = readFile2;
+            fileFormat = readFile3;
+            pageSize = readFile4;
+
+            if (fileFormat == "0")
+            {
+                exportFileName = ExportFileNameTextBox.Text + ".docx";
+            }
+            else if (fileFormat == "1")
+            {
+                exportFileName = ExportFileNameTextBox.Text + ".pdf";
+            }
 
             string jsonUrl = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
 
@@ -52,28 +79,26 @@ namespace YugiohImagePrinter
 
         private void UsingDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            usingData = UsingDataComboBox.Text;
+            usingData = cbbUsingData.Text;
             if (usingData == "Online data")
             {
                 OnlineMode = true;
-                label4.Hide();
-                DataPicPathTextBox.Hide();
-                AddDataPicPathButton.Hide();
             }
             else if (usingData == "Offline data")
             {
                 OnlineMode = false;
-                label4.Show();
-                DataPicPathTextBox.Show();
-                AddDataPicPathButton.Show();
             }
         }
 
-        private void ConfirmButton_Click(object sender, EventArgs e)
+        private async void ConfirmButton_Click(object sender, EventArgs e)
         {
-            if (DecklistPathTextBox.Text == "" || DecklistPathTextBox.Text == null || UsingDataComboBox.Text == "" || UsingDataComboBox.Text == null)
+            if (string.IsNullOrEmpty(txtDecklistPath.Text))
             {
-                MessageBox.Show("Decklist path and using data cannot be null or empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Vui lòng thêm decklist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+            else if (string.IsNullOrEmpty(cbbUsingData.Text))
+            {
+                MessageBox.Show("Vui lòng chọn chế độ dữ liệu sử dụng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else
             {
@@ -84,7 +109,6 @@ namespace YugiohImagePrinter
 
                 ConfirmButton.Enabled = false;
                 AddPathButton.Enabled = false;
-                AddDataPicPathButton.Enabled = false;
 
                 for (int i = 0; i < lines.Length; i++)
                 {
@@ -124,18 +148,13 @@ namespace YugiohImagePrinter
                         list2.RemoveAll(string.IsNullOrEmpty);
                         imageUrl = list2.ToArray();
 
-                        if (!Directory.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}"))
-                        {
-                            Directory.CreateDirectory($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}");
-                        }
-
                         for (int j = 0; j < imageUrl.Length; j++)
                         {
                             for (int j2 = 0; j2 < tempArray.Length; j2++)
                             {
                                 if (Path.GetFileName(imageUrl[j]) == (tempArray[j2] + ".jpg"))
                                 {
-                                    if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[j])}"))
+                                    if (!File.Exists($"{onlinePath}\\{Path.GetFileName(imageUrl[j])}"))
                                     {
                                         downArray[f] = j;
                                         f++;
@@ -146,11 +165,12 @@ namespace YugiohImagePrinter
 
                         for (int h = 0; h < downArray.Length; h++)
                         {
-                            if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[downArray[h]])}"))
+                            if (!File.Exists($"{onlinePath}\\{Path.GetFileName(imageUrl[downArray[h]])}"))
                             {
-                                Thread.Sleep(1300);
-                                httpDownloader = new HttpDownloader(imageUrl[downArray[h]], $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[downArray[h]])}");
+                                //Thread.Sleep(1300);
+                                httpDownloader = new HttpDownloader(imageUrl[downArray[h]], $"{onlinePath}\\{Path.GetFileName(imageUrl[downArray[h]])}");
                                 httpDownloader.Start();
+                                await Task.Delay(1000);
                             }
                         }
                     }
@@ -163,29 +183,17 @@ namespace YugiohImagePrinter
                 }
                 else
                 {
-                    if (DataPicPathTextBox.Text == "" || DataPicPathTextBox.Text == null)
+                    if (string.IsNullOrEmpty(offlinePath))
                     {
-                        MessageBox.Show("Picture data path cannot be null or empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("Thư mục chứa ảnh offline không tồn tại\nVui lòng chọn đường dẫn trong cài đặt!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         ConfirmButton.Enabled = true;
                         AddPathButton.Enabled = true;
-                        AddDataPicPathButton.Enabled = true;
                     }
                     else
                     {
                         ExportButton.Enabled = true;
                     }
                 }
-            }
-        }
-
-        private void AddDataPicPathButton_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                dataPicPath = fbd.SelectedPath;
-                DataPicPathTextBox.Text = dataPicPath;
             }
         }
 
@@ -206,7 +214,7 @@ namespace YugiohImagePrinter
             if (openFileDialog1.FileName != "")
             {
                 decklistPath = openFileDialog1.FileName;
-                DecklistPathTextBox.Text = decklistPath;
+                txtDecklistPath.Text = decklistPath;
             }
         }
 
@@ -217,7 +225,6 @@ namespace YugiohImagePrinter
             ExportButton.Enabled = false;
             ConfirmButton.Enabled = true;
             AddPathButton.Enabled = true;
-            AddDataPicPathButton.Enabled = true;
 
             try
             {
@@ -228,7 +235,14 @@ namespace YugiohImagePrinter
                 {
                     foreach (Section section in document.Sections)
                     {
-                        section.PageSetup.PageSize = PageSize.A4;
+                        if (pageSize == "0")
+                        {
+                            section.PageSetup.PageSize = PageSize.A4;
+                        }
+                        else if (pageSize == "1")
+                        {
+                            section.PageSetup.PageSize = PageSize.A3;
+                        }
                     }
 
                     for (int i = 0; i < tempArray.Length; i++)
@@ -260,9 +274,16 @@ namespace YugiohImagePrinter
                         picture.TextWrappingStyle = TextWrappingStyle.InFrontOfText;
                     }
 
-                    document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.Docx);
-                    Console.WriteLine("Done!");
-                    MessageBox.Show("Export success!\nFile location at" + userPath + "\\" + exportFileName, "Title");
+                    if (fileFormat == "0")
+                    {
+                        document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.Docx);
+                    }
+                    else if (fileFormat == "1")
+                    {
+                        document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.PDF);
+                    }
+                    //document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.Docx);
+                    MessageBox.Show("Xuất file thành công!\nĐường dẫn file tại " + userPath + "\\" + exportFileName, "Thành công");
                 }
                 else
                 {
@@ -282,7 +303,7 @@ namespace YugiohImagePrinter
                             verticalIndex = 0;
                         }
 
-                        DocPicture picture = section.Paragraphs[0].AppendPicture(Image.FromFile(dataPicPath + "\\" + tempArray[i] + ".jpg"));
+                        DocPicture picture = section.Paragraphs[0].AppendPicture(Image.FromFile(offlinePath + "\\" + tempArray[i] + ".jpg"));
                         picture.HorizontalPosition = x + (horizontalValue * horizontalIndex);
                         picture.VerticalPosition = y + (verticalValue * verticalIndex);
 
@@ -300,20 +321,22 @@ namespace YugiohImagePrinter
                         picture.TextWrappingStyle = TextWrappingStyle.InFrontOfText;
                     }
 
-                    document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.Docx);
-
-                    MessageBox.Show("Export success!\nFile location at" + userPath + "\\" + exportFileName, "Title");
+                    if (fileFormat == "0")
+                    {
+                        document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.Docx);
+                    }
+                    else if (fileFormat == "1")
+                    {
+                        document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.PDF);
+                    }
+                    //document.SaveToFile(userPath + "\\" + exportFileName, FileFormat.Docx);
+                    MessageBox.Show("Xuất file thành công!\nĐường dẫn file tại " + userPath + "\\" + exportFileName, "Thành công");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void ExportFileNameTextBox_TextChanged(object sender, EventArgs e)

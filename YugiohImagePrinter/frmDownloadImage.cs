@@ -17,6 +17,9 @@ namespace YugiohImagePrinter
 {
     public partial class frmDownloadImage : Form
     {
+        private string offlinePath;
+        private string duongdanDoc, settingPath1;
+
         public frmDownloadImage()
         {
             InitializeComponent();
@@ -30,6 +33,11 @@ namespace YugiohImagePrinter
             {
                 string[] imageUrl = new string[20000];
                 int i = 0;
+
+                if (string.IsNullOrEmpty(offlinePath))
+                {
+                    MessageBox.Show("Thư mục chứa ảnh offline không tồn tại\nVui lòng chọn đường dẫn trong cài đặt!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
 
                 using (StreamReader r = new StreamReader($"{Application.StartupPath}\\{"JsonData"}\\{"cardinfo.php.json"}"))
                 {
@@ -51,17 +59,12 @@ namespace YugiohImagePrinter
                 list.RemoveAll(string.IsNullOrEmpty);
                 imageUrl = list.ToArray();
 
-                if (!Directory.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}"))
-                {
-                    Directory.CreateDirectory($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}");
-                }
-
                 for (int j = 0; j < imageUrl.Length; j++)
                 {
                     Thread.Sleep(100);
-                    if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[j])}"))
+                    if (!File.Exists($"{offlinePath}\\{Path.GetFileName(imageUrl[j])}"))
                     {
-                        httpDownloader = new HttpDownloader(imageUrl[j], $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{"CardImageData"}\\{Path.GetFileName(imageUrl[j])}");
+                        httpDownloader = new HttpDownloader(imageUrl[j], $"{offlinePath}\\{Path.GetFileName(imageUrl[j])}");
                         //httpDownloader.DownloadCompleted += HttpDownloader_DownloadCompleted;
                         //httpDownloader.ProgressChanged += HttpDownloader_ProgressChanged;
                         httpDownloader.Start();
@@ -89,6 +92,13 @@ namespace YugiohImagePrinter
 
         private void DownloadImageForm_Load(object sender, EventArgs e)
         {
+            duongdanDoc = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            settingPath1 = duongdanDoc + @"\YugiohPrinterSetting\SettingValue2.txt";
+
+            string readFile1 = File.ReadAllText(settingPath1);
+
+            offlinePath = readFile1;
+
             DownloadCardImageButton.Enabled = false;
 
             try
@@ -109,11 +119,6 @@ namespace YugiohImagePrinter
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void UseDriverLinkButton_Click(object sender, EventArgs e)

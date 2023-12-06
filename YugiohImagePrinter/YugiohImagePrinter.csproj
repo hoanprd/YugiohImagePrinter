@@ -73,6 +73,12 @@
     <Compile Include="frmDefault.Designer.cs">
       <DependentUpon>frmDefault.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditExportFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditExportFile.Designer.cs">
+      <DependentUpon>frmEditExportFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDefault.resx">
       <DependentUpon>frmDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditExportFile.resx">
+      <DependentUpon>frmEditExportFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

@@ -124,6 +124,7 @@ namespace YugiohImagePrinter
             this.Name = "frmChangeDir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thay đổi đường dẫn";
+            this.Load += new System.EventHandler(this.frmChangeDir_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
