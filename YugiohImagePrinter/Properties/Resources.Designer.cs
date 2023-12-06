@@ -63,6 +63,36 @@ namespace YugiohImagePrinter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aha_Soft_Universal_Shop_Print {
+            get {
+                object obj = ResourceManager.GetObject("Aha-Soft-Universal-Shop-Print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aha_Soft_Universal_Shop_Print1 {
+            get {
+                object obj = ResourceManager.GetObject("Aha-Soft-Universal-Shop-Print1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Atelier_Resna_08_28_23 {
+            get {
+                object obj = ResourceManager.GetObject("Atelier-Resna_08-28-23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_Reflection_Sun {
             get {
                 object obj = ResourceManager.GetObject("Blue Reflection Sun", resourceCulture);
@@ -76,6 +106,66 @@ namespace YugiohImagePrinter.Properties {
         internal static System.Drawing.Bitmap Blue_Reflection_Sun_Background {
             get {
                 object obj = ResourceManager.GetObject("Blue Reflection Sun Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gakuseisean_Ivista_2_Misc_New_Database {
+            get {
+                object obj = ResourceManager.GetObject("Gakuseisean-Ivista-2-Misc-New-Database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hopstarter_Button_Button_Next {
+            get {
+                object obj = ResourceManager.GetObject("Hopstarter-Button-Button-Next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hopstarter_Soft_Scraps_Text_Edit {
+            get {
+                object obj = ResourceManager.GetObject("Hopstarter-Soft-Scraps-Text-Edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Iconshock_Cms_User_login {
+            get {
+                object obj = ResourceManager.GetObject("Iconshock-Cms-User-login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SAVEADD {
+            get {
+                object obj = ResourceManager.GetObject("SAVEADD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visualpharm_Must_Have_Log_Out {
+            get {
+                object obj = ResourceManager.GetObject("Visualpharm-Must-Have-Log-Out", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

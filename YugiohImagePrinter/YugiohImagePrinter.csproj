@@ -55,35 +55,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DownloadImageForm.cs">
+    <Compile Include="frmChangeDir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DownloadImageForm.Designer.cs">
-      <DependentUpon>DownloadImageForm.cs</DependentUpon>
+    <Compile Include="frmChangeDir.Designer.cs">
+      <DependentUpon>frmChangeDir.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenuForm.cs">
+    <Compile Include="frmDownloadImage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenuForm.Designer.cs">
-      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    <Compile Include="frmDownloadImage.Designer.cs">
+      <DependentUpon>frmDownloadImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDefault.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDefault.Designer.cs">
+      <DependentUpon>frmDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="ReadJson.cs" />
-    <Compile Include="YugiohPrinterForm.cs">
+    <Compile Include="frmYugiohPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YugiohPrinterForm.Designer.cs">
-      <DependentUpon>YugiohPrinterForm.cs</DependentUpon>
+    <Compile Include="frmYugiohPrinter.Designer.cs">
+      <DependentUpon>frmYugiohPrinter.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DownloadImageForm.resx">
-      <DependentUpon>DownloadImageForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmChangeDir.resx">
+      <DependentUpon>frmChangeDir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenuForm.resx">
-      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmDownloadImage.resx">
+      <DependentUpon>frmDownloadImage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="YugiohPrinterForm.resx">
-      <DependentUpon>YugiohPrinterForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmDefault.resx">
+      <DependentUpon>frmDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYugiohPrinter.resx">
+      <DependentUpon>frmYugiohPrinter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +132,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Blue Reflection Sun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Atelier-Resna_08-28-23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visualpharm-Must-Have-Log-Out.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gakuseisean-Ivista-2-Misc-New-Database.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aha-Soft-Universal-Shop-Print.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aha-Soft-Universal-Shop-Print1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Soft-Scraps-Text-Edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Button-Button-Next.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAVEADD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconshock-Cms-User-login.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

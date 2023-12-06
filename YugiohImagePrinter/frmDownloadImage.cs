@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,9 +15,9 @@ using System.Windows.Forms;
 
 namespace YugiohImagePrinter
 {
-    public partial class DownloadImageForm : Form
+    public partial class frmDownloadImage : Form
     {
-        public DownloadImageForm()
+        public frmDownloadImage()
         {
             InitializeComponent();
         }
@@ -113,6 +114,11 @@ namespace YugiohImagePrinter
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void UseDriverLinkButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://drive.google.com/drive/folders/1JXLhv2MFxmCRdCBqebnmnvB8Zw5MFl7Z?usp=sharing");
         }
     }
 }

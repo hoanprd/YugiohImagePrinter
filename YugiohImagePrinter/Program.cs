@@ -16,7 +16,7 @@ namespace YugiohImagePrinter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenuForm());
+            Application.Run(new frmMain());
         }
     }
 }

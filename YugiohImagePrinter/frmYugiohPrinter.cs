@@ -17,7 +17,7 @@ using Spire.Doc.Fields;
 
 namespace YugiohImagePrinter
 {
-    public partial class YugiohPrinterForm : Form
+    public partial class frmYugiohPrinter : Form
     {
         public static string decklistPath, dataPicPath, exportFileName, usingData;
         public static float x = -35f, y = -50f, width = 81.9899944414f, height = 243.764172336f;
@@ -189,7 +189,7 @@ namespace YugiohImagePrinter
             }
         }
 
-        public YugiohPrinterForm()
+        public frmYugiohPrinter()
         {
             InitializeComponent();
         }
@@ -313,8 +313,6 @@ namespace YugiohImagePrinter
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            MainMenuForm mm = new MainMenuForm();
-            mm.Show();
             this.Close();
         }
 

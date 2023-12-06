@@ -15,32 +15,26 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2F2CDAC7521F57222DB7FF1BD5DD67E6"
+        "MsmKey" = "8:_553E0443963E8D143BDE377D3AF0BAC3"
+        "OwnerKey" = "8:_A495155A9D6141A2891F0005FD9EC4F2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_553E0443963E8D143BDE377D3AF0BAC3"
         "OwnerKey" = "8:_DAB926BCDF1A4F2B952AFFEE1E4A187D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2F2CDAC7521F57222DB7FF1BD5DD67E6"
-        "OwnerKey" = "8:_A495155A9D6141A2891F0005FD9EC4F2"
+        "MsmKey" = "8:_6256F52919C9405A81E46BCCE326A17E"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8FD4094A1DD5462BABB9BB9D982100C3"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9CBB85F7B1F081BE441E909A2AAC4D04"
-        "OwnerKey" = "8:_DAB926BCDF1A4F2B952AFFEE1E4A187D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9CBB85F7B1F081BE441E909A2AAC4D04"
-        "OwnerKey" = "8:_A495155A9D6141A2891F0005FD9EC4F2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -57,14 +51,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A5211AB89D5569621979A69304C74D40"
-        "OwnerKey" = "8:_DAB926BCDF1A4F2B952AFFEE1E4A187D"
+        "MsmKey" = "8:_AE8935753CC144FA40236F383FC756BD"
+        "OwnerKey" = "8:_A495155A9D6141A2891F0005FD9EC4F2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A5211AB89D5569621979A69304C74D40"
-        "OwnerKey" = "8:_A495155A9D6141A2891F0005FD9EC4F2"
+        "MsmKey" = "8:_AE8935753CC144FA40236F383FC756BD"
+        "OwnerKey" = "8:_DAB926BCDF1A4F2B952AFFEE1E4A187D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -75,26 +69,38 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F9DE3BADDCB5FD4B6698D22919057972"
-        "OwnerKey" = "8:_9CBB85F7B1F081BE441E909A2AAC4D04"
+        "MsmKey" = "8:_DF1E10CF95E290526ADD173CD6B0ADA7"
+        "OwnerKey" = "8:_553E0443963E8D143BDE377D3AF0BAC3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F9DE3BADDCB5FD4B6698D22919057972"
+        "MsmKey" = "8:_DF1E10CF95E290526ADD173CD6B0ADA7"
+        "OwnerKey" = "8:_DAB926BCDF1A4F2B952AFFEE1E4A187D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF1E10CF95E290526ADD173CD6B0ADA7"
         "OwnerKey" = "8:_A495155A9D6141A2891F0005FD9EC4F2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F9DE3BADDCB5FD4B6698D22919057972"
+        "MsmKey" = "8:_FDF739DCAE90CD0A5B0442008A2E4B4D"
+        "OwnerKey" = "8:_A495155A9D6141A2891F0005FD9EC4F2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FDF739DCAE90CD0A5B0442008A2E4B4D"
         "OwnerKey" = "8:_DAB926BCDF1A4F2B952AFFEE1E4A187D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2F2CDAC7521F57222DB7FF1BD5DD67E6"
+        "OwnerKey" = "8:_DAB926BCDF1A4F2B952AFFEE1E4A187D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,25 +112,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DAB926BCDF1A4F2B952AFFEE1E4A187D"
+        "OwnerKey" = "8:_AE8935753CC144FA40236F383FC756BD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A5211AB89D5569621979A69304C74D40"
+        "OwnerKey" = "8:_553E0443963E8D143BDE377D3AF0BAC3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9CBB85F7B1F081BE441E909A2AAC4D04"
+        "OwnerKey" = "8:_DF1E10CF95E290526ADD173CD6B0ADA7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F9DE3BADDCB5FD4B6698D22919057972"
+        "OwnerKey" = "8:_FDF739DCAE90CD0A5B0442008A2E4B4D"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -145,6 +151,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -161,6 +175,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -190,65 +220,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2F2CDAC7521F57222DB7FF1BD5DD67E6"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_2F2CDAC7521F57222DB7FF1BD5DD67E6"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_4B9A587624714A9FBD222AACFC655DF9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8FD4094A1DD5462BABB9BB9D982100C3"
-            {
-            "SourcePath" = "8:E:\\GiaiTri\\Picture\\Blue Reflection Sun.ico"
-            "TargetName" = "8:Blue Reflection Sun.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_4B9A587624714A9FBD222AACFC655DF9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9CBB85F7B1F081BE441E909A2AAC4D04"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_553E0443963E8D143BDE377D3AF0BAC3"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:AltoHttp, Version=1.0.7945.3063, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9CBB85F7B1F081BE441E909A2AAC4D04"
+                    "_553E0443963E8D143BDE377D3AF0BAC3"
                     {
                     "Name" = "8:AltoHttp.dll"
                     "Attributes" = "3:512"
@@ -272,6 +251,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6256F52919C9405A81E46BCCE326A17E"
+            {
+            "SourcePath" = "8:..\\YugiohImagePrinter\\bin\\Debug\\JsonData\\cardinfo.php.json"
+            "TargetName" = "8:cardinfo.php.json"
+            "Tag" = "8:"
+            "Folder" = "8:_9977C08EBE6241218782C609F8C2E28C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8FD4094A1DD5462BABB9BB9D982100C3"
+            {
+            "SourcePath" = "8:E:\\GiaiTri\\Picture\\Blue Reflection Sun.ico"
+            "TargetName" = "8:Blue Reflection Sun.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_4B9A587624714A9FBD222AACFC655DF9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9E195B6B6275429689E6A2049DADF37D"
             {
             "SourcePath" = "8:..\\YugiohImagePrinter\\bin\\Debug\\Doc1.docx"
@@ -292,14 +311,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A5211AB89D5569621979A69304C74D40"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AE8935753CC144FA40236F383FC756BD"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Spire.Doc, Version=11.6.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A5211AB89D5569621979A69304C74D40"
+                    "_AE8935753CC144FA40236F383FC756BD"
                     {
                     "Name" = "8:Spire.Doc.dll"
                     "Attributes" = "3:512"
@@ -323,20 +342,51 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F9DE3BADDCB5FD4B6698D22919057972"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF1E10CF95E290526ADD173CD6B0ADA7"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F9DE3BADDCB5FD4B6698D22919057972"
+                    "_DF1E10CF95E290526ADD173CD6B0ADA7"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
                     }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_4B9A587624714A9FBD222AACFC655DF9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FDF739DCAE90CD0A5B0442008A2E4B4D"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_FDF739DCAE90CD0A5B0442008A2E4B4D"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4B9A587624714A9FBD222AACFC655DF9"
@@ -370,6 +420,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_9977C08EBE6241218782C609F8C2E28C"
+                    {
+                    "Name" = "8:JsonData"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_41212BEF8BE248448BB31AE69A71A406"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_767C1DC2F5B74E309422DF271D3FB628"
@@ -422,7 +483,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Yugioh Image Printer"
         "ProductCode" = "8:{7CAD0589-ED69-4677-98A7-1F5EC8A81D11}"
-        "PackageCode" = "8:{F84205DD-E38B-4B45-9CB9-E76E7E0D92D3}"
+        "PackageCode" = "8:{85A865FB-CF65-4278-A11B-36EDE24D9E2F}"
         "UpgradeCode" = "8:{9EBA86AB-EE56-478D-9817-48D7B3C8DF99}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -544,7 +605,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4A7114E329C24FD4882FDA2A5299E5E2"
             {
-            "Name" = "8:YugiohImagePrinter"
+            "Name" = "8:Yugioh Image Printer"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
