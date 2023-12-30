@@ -30,9 +30,9 @@ namespace YugiohImagePrinter
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxMain = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMain)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -41,36 +41,40 @@ namespace YugiohImagePrinter
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.SystemColors.Control;
-            this.panelMain.Controls.Add(this.pictureBox1);
-            this.panelMain.Location = new System.Drawing.Point(-1, -4);
+            this.panelMain.Controls.Add(this.pbxMain);
+            this.panelMain.Location = new System.Drawing.Point(-1, -3);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(834, 419);
+            this.panelMain.Size = new System.Drawing.Size(626, 340);
             this.panelMain.TabIndex = 7;
             // 
-            // pictureBox1
+            // pbxMain
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pbxMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::YugiohImagePrinter.Properties.Resources.Atelier_Resna_08_28_23;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(834, 416);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbxMain.Image = global::YugiohImagePrinter.Properties.Resources.Atelier_Resna_08_28_23;
+            this.pbxMain.Location = new System.Drawing.Point(0, 2);
+            this.pbxMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxMain.Name = "pbxMain";
+            this.pbxMain.Size = new System.Drawing.Size(626, 338);
+            this.pbxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxMain.TabIndex = 0;
+            this.pbxMain.TabStop = false;
             // 
             // frmDefault
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 413);
+            this.ClientSize = new System.Drawing.Size(624, 336);
             this.Controls.Add(this.panelMain);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmDefault";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Màn hình chính";
+            this.Load += new System.EventHandler(this.frmDefault_Load);
             this.panelMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -78,6 +82,6 @@ namespace YugiohImagePrinter
         #endregion
 
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxMain;
     }
 }

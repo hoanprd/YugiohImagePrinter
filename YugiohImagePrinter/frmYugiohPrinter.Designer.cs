@@ -85,7 +85,6 @@ namespace YugiohImagePrinter
             this.ExportFileNameTextBox.Size = new System.Drawing.Size(332, 29);
             this.ExportFileNameTextBox.TabIndex = 5;
             this.ExportFileNameTextBox.Text = "PRD";
-            this.ExportFileNameTextBox.TextChanged += new System.EventHandler(this.ExportFileNameTextBox_TextChanged);
             // 
             // AddPathButton
             // 

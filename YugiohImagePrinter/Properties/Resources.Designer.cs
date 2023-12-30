@@ -63,6 +63,26 @@ namespace YugiohImagePrinter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1484589503_Bag {
+            get {
+                object obj = ResourceManager.GetObject("1484589503_Bag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aha_Soft_People_Engineer {
+            get {
+                object obj = ResourceManager.GetObject("Aha-Soft-People-Engineer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aha_Soft_Universal_Shop_Print {
             get {
                 object obj = ResourceManager.GetObject("Aha-Soft-Universal-Shop-Print", resourceCulture);
@@ -76,6 +96,16 @@ namespace YugiohImagePrinter.Properties {
         internal static System.Drawing.Bitmap Aha_Soft_Universal_Shop_Print1 {
             get {
                 object obj = ResourceManager.GetObject("Aha-Soft-Universal-Shop-Print1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap atelier_resleriana_gameplay_and_little_translation_on_the_v0_pf69dt7k1ypb1 {
+            get {
+                object obj = ResourceManager.GetObject("atelier-resleriana-gameplay-and-little-translation-on-the-v0-pf69dt7k1ypb1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +143,16 @@ namespace YugiohImagePrinter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fatcow_Farm_Fresh_Category {
+            get {
+                object obj = ResourceManager.GetObject("Fatcow-Farm-Fresh-Category", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gakuseisean_Ivista_2_Misc_New_Database {
             get {
                 object obj = ResourceManager.GetObject("Gakuseisean-Ivista-2-Misc-New-Database", resourceCulture);
@@ -126,6 +166,16 @@ namespace YugiohImagePrinter.Properties {
         internal static System.Drawing.Bitmap Hopstarter_Button_Button_Next {
             get {
                 object obj = ResourceManager.GetObject("Hopstarter-Button-Button-Next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hopstarter_Sleek_Xp_Basic_Money {
+            get {
+                object obj = ResourceManager.GetObject("Hopstarter-Sleek-Xp-Basic-Money", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +213,29 @@ namespace YugiohImagePrinter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap UpdateIco {
+            get {
+                object obj = ResourceManager.GetObject("UpdateIco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Visualpharm_Must_Have_Log_Out {
             get {
                 object obj = ResourceManager.GetObject("Visualpharm-Must-Have-Log-Out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zerode_Plump_Search {
+            get {
+                object obj = ResourceManager.GetObject("Zerode-Plump-Search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
