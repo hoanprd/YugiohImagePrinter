@@ -25,10 +25,13 @@ namespace YugiohImagePrinter
         private string duongdanDoc, settingPath1, settingPath2, settingPath3, settingPath4, settingPath5;
 
         public static string decklistPath, dataPicPath, exportFileName, usingData;
-        public static float x = -35f, y = -50f, width = 81.9899944414f, height = 243.764172336f;
+        //public static float x = -35f, y = -50f, width = 81.9899944414f, height = 243.764172336f;
+        //public static float x = -55f, y = -50f, width = 88.9382990551f, height = 257.936507937f;
+        public static float x = -55f, y = -50f, width = 87.5486381323f, height = 255.10204081674f;
 
         int horizontalIndex = 0, verticalIndex = 0;
-        float horizontalValue = 180, verticalValue = 250;
+        //float horizontalValue = 180, verticalValue = 250;
+        float horizontalValue = 190, verticalValue = 270;
         string userPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string[] tempArray;
         int[] downArray;
